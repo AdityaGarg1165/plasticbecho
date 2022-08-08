@@ -1,7 +1,19 @@
-import { View, Text } from 'react-native'
+import { View, Text,TouchableOpacity } from 'react-native'
 import React from 'react'
+import { useNavigation } from '@react-navigation/native'
+// import { redirect } from 'next/dist/server/api-utils'
 
 export default function Categories() {
+  const navigation = useNavigation()
+  function redirect(){
+    navigation.navigate("Products")
+  }
+  function redirect_2(){
+    navigation.navigate("2Products")
+  }
+  function redirect_3(){
+    navigation.navigate("gProducts")
+  }
   return (
     <View style={{
         display:"flex",
@@ -11,42 +23,43 @@ export default function Categories() {
         flexDirection:"row",
         marginTop:45
     }}>
+      <TouchableOpacity onPress={redirect}>
+
       <Text style={{marginLeft:12,
       borderWidth:1,
       borderColor:"gray",
-      width:70,
+      width:130,
       height:30,
       paddingTop:3,
       paddingLeft:13,
       borderRadius:28
-    }}>Tshirts</Text>
+    }}>packaging plastic</Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={redirect_2}>
+
+
       <Text style={{marginLeft:12,
          borderWidth:1,
          borderColor:"gray",
-         width:70,
+         width:100,
          height:30,
          paddingTop:3,
          paddingLeft:10,
          borderRadius:28
-    }}>Hoodies</Text>
+        }}>PVC Plastics</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={redirect_3}>
       <Text style={{marginLeft:12,
-         borderWidth:1,
-         borderColor:"gray",
-         width:65,
-         height:30,
-         paddingTop:3,
-         paddingLeft:16,
-         borderRadius:28,
-    }}>Mugs</Text>
-      <Text style={{marginLeft:12,
-         borderWidth:1,
-         borderColor:"gray",
-         width:70,
-         height:30,
-         paddingTop:3,
-         paddingLeft:13,
-         borderRadius:28
-    }}>Shoes</Text>
+        borderWidth:1,
+        borderColor:"gray",
+        width:130,
+        height:30,
+        paddingTop:3,
+        paddingLeft:16,
+        borderRadius:28,
+      }}>General Plastics</Text>
+      </TouchableOpacity>
+
     </View>
   )
 }
