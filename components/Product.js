@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
       height: 0,
       width: 0,
     },
-    elevation: 1,
+    elevation: 10,
     marginVertical: 20,
   },
   thumb: {

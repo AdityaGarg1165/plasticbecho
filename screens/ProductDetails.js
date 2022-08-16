@@ -13,6 +13,7 @@ import { CartContext } from '../CartContext';
 export function ProductDetails({route}) {
   const { productId } = route.params;
   const [product, setProduct] = useState({});
+  const [col, setc] = useState("transparent");
 
   const { addItemToCart } = useContext(CartContext);
 
@@ -21,7 +22,7 @@ export function ProductDetails({route}) {
   });
 
   function onAddToCart() {
-    addItemToCart(product.id);
+    setc("green")
   }
 
   return (
@@ -35,10 +36,10 @@ export function ProductDetails({route}) {
           <Text style={styles.name}>{product.name}</Text>
           <Text style={styles.price}>$ {product.price}</Text>
           <Text style={styles.description}>{product.description}</Text>
-            <Button
-            onPress={onAddToCart}
-            title="Sell now"
-            / >
+          <View style={{backgroundColor:"black"}}>
+            <Button style={{borderRadius:20}} onPress={onAddToCart} title="Sell now"/ >
+          </View>
+              <Text style={{marginTop:20,marginLeft:50,fontSize:20,color:col,width:250}}>Order Placed succesfully!</Text>
         </View>
       </ScrollView>
     </SafeAreaView>

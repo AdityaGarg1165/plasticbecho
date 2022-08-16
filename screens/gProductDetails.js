@@ -39,6 +39,7 @@ export function ProductDetailsg({route}) {
             onPress={onAddToCart}
             title="Sell now"
             / >
+              
         </View>
       </ScrollView>
     </SafeAreaView>
